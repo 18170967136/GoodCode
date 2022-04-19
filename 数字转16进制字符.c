@@ -19,3 +19,4 @@ void To_String(uint8 *dest, char *src, uint8 length)
     dest[(i << 1) + 1] = ch + ((ch < 10) ? '0':'7');
   }
 }
+
