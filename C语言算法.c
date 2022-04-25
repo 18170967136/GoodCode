@@ -20,6 +20,26 @@ void To_String(uint8 *dest, char *src, uint8 length)
   }
 }
 
+/*
+斜线点位计算 x1,y1 起始点 x2,y2,目标点 k斜率   
+*/
+#include <stdio.h>
+int main()
+{
+	int x1=0,y1=0;
+	int x2=50,y2=90;
+	
+	int x,y;
+	
+	double k=(y2-y1)*1.0 /(x2-x);
+	for(x=x1+1;x<x2;x++){
+		y=k*(x-x1)+y1;
+		printf("x=%d,y=%d\n",x,y);
+	}
+   
+   return 0;
+}
+
 
 /*
 单片机12864数据缓冲数组
