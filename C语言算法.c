@@ -19,3 +19,32 @@ void To_String(uint8 *dest, char *src, uint8 length)
     dest[(i << 1) + 1] = ch + ((ch < 10) ? '0':'7');
   }
 }
+
+
+/*
+单片机12864数据缓冲数组
+C语言实验案例
+*/
+#include<stdio.h>
+int buf[1024];
+int x,y;
+int p;
+main()
+{
+	x=50;y=99;
+	
+	p=(x/8)*128+y;
+	buf[p]=1<<(x%8);
+	
+	for(int i=0;i<64;i++){
+		for(int j=0;j<128;j++){
+			p=(i/8)*128+j;
+			int num=buf[p] & ( 1<<(i%8) );
+			printf("%d",num!=0);
+		}
+		printf("\n");
+	}
+	
+	printf("Hello");
+	return 0;
+ } 
